@@ -1,4 +1,4 @@
-﻿import { Container } from "@/components/layout/Container";
+import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { ShieldCheck, Users, Car, Building2, Shield, HeartPulse, Target, ShieldAlert, Award, Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -19,24 +19,68 @@ export default function Home() {
         </div>
         
         <Container className="relative z-20">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center rounded-full bg-purple-main/10 px-4 py-1.5 text-xs font-semibold text-purple-main ring-1 ring-inset ring-purple-main/20 uppercase tracking-widest">
-              ★ Trusted Security Services Since 2013 ★
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl">
+              <div className="mb-6 inline-flex items-center rounded-full bg-purple-main/10 px-4 py-1.5 text-xs font-semibold text-purple-main ring-1 ring-inset ring-purple-main/20 uppercase tracking-widest">
+                ★ Trusted Security Services Since 2013 ★
+              </div>
+              <h1 className="mb-6 text-5xl font-bold tracking-tight text-foreground sm:text-7xl heading-premium leading-[1.1] md:leading-[1.15]">
+                To Protect with Courage, <br/>
+                <span className="text-gradient-purple">To Serve with Compassion.</span>
+              </h1>
+              <p className="mb-10 text-lg leading-8 text-muted max-w-2xl font-light">
+                SSM Inc. provides premium 24/7 armed and unarmed security guards, mobile patrol, and facilities management services for government, commercial, and residential properties.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <Button asChild size="lg" variant="primary">
+                  <Link href="/contact">Request a Quote</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/services">Explore Our Services</Link>
+                </Button>
+              </div>
             </div>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-foreground sm:text-7xl heading-premium leading-[1.1] md:leading-[1.15]">
-              To Protect with Courage, <br/>
-              <span className="text-gradient-purple">To Serve with Compassion.</span>
-            </h1>
-            <p className="mb-10 text-lg leading-8 text-muted max-w-2xl font-light">
-              SSM Inc. provides premium 24/7 armed and unarmed security guards, mobile patrol, and facilities management services for government, commercial, and residential properties.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Button asChild size="lg" variant="primary">
-                <Link href="/contact">Request a Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/services">Explore Our Services</Link>
-              </Button>
+
+            {/* Security Badge Design */}
+            <div className="relative hidden lg:flex justify-center items-center w-full h-[500px] group perspective-[1000px]">
+              {/* Background glowing orb for the shield */}
+              <div className="absolute inset-0 m-auto w-64 h-64 bg-purple-main/20 dark:bg-purple-main/10 blur-[80px] rounded-full animate-pulse" />
+
+              {/* Center Huge Shield Outline */}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="0.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="w-96 h-96 text-primary/80 dark:text-purple-300/40 drop-shadow-xl dark:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all duration-700 animate-[pulse_4s_ease-in-out_infinite]"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+              </svg>
+              
+              {/* Top Right Floating Card */}
+              <div className="absolute top-[20%] right-[2%] xl:right-[8%] glass-effect rounded-2xl p-4 pr-8 flex items-center gap-4 border border-purple-main/50 dark:border-purple-main/20 shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] bg-surface/90 dark:bg-surface/80 backdrop-blur-xl z-10 animate-float hover:scale-105 transition-transform duration-300 cursor-default">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-purple flex items-center justify-center text-white shadow-lg shadow-purple-main/40">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-foreground font-bold text-base leading-tight">Protected</p>
+                  <p className="text-muted/90 text-sm font-light">24/7 Security</p>
+                </div>
+              </div>
+
+              {/* Bottom Left Floating Card */}
+              <div className="absolute bottom-[20%] left-[2%] xl:left-[8%] glass-effect rounded-2xl p-4 pr-8 flex items-center gap-4 border border-purple-main/50 dark:border-purple-main/20 shadow-[0_10px_40px_-10px_rgba(168,85,247,0.3)] bg-surface/90 dark:bg-surface/80 backdrop-blur-xl z-10 animate-float-delayed hover:scale-105 transition-transform duration-300 cursor-default">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-purple flex items-center justify-center text-white shadow-lg shadow-purple-main/40">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-foreground font-bold text-base leading-tight">Always Available</p>
+                  <p className="text-muted/90 text-sm font-light">Rapid Response</p>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
